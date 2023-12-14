@@ -10,6 +10,12 @@ return {
 
     ["<C-d>"] = {
       "<C-d>zz",
+      desc = "Jump down",
+    },
+
+    ["<C-u>"] = {
+      "<C-u>zz",
+      desc = "Jump up",
     },
 
     ["J"] = {
