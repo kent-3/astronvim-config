@@ -81,5 +81,24 @@ return {
       --   ["~/%.config/foo/.*"] = "fooscript",
       -- },
     }
+
+    -- only for Neovide
+    if vim.g.neovide then
+      vim.o.guifont = "CaskaydiaCove Nerd Font:h12"
+      vim.g.neovide_scale_factor = 1.0
+
+      -- scale with CTRL-+/-
+      local change_scale_factor = function(delta) vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta end
+      vim.keymap.set("n", "<C-=>", function() change_scale_factor(1.1) end, { desc = "Zoom in" })
+      vim.keymap.set("n", "<C-->", function() change_scale_factor(1 / 1.1) end, { desc = "Zoom out" })
+
+      -- allow CTRL-C copy and CTRL-V paste
+      vim.keymap.set("v", "<C-c>", '"+y', { desc = "Copy" }) -- Copy
+      vim.keymap.set("n", "<C-v>", '"+P', { desc = "Paste" }) -- Paste normal mode
+      vim.keymap.set("v", "<C-v>", '"+P', { desc = "Paste" }) -- Paste visual mode
+      vim.keymap.set("c", "<C-v>", "<C-R>+") -- Paste command mode
+      vim.keymap.set("i", "<C-v>", '<ESC>l"+Pli') -- Paste insert mode
+      vim.keymap.set("t", "<C-v>", [[<C-\><C-n>"+Pi]]) -- Paste terminal mode
+    end
   end,
 }
