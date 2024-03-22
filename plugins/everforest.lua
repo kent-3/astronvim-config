@@ -13,7 +13,7 @@ return {
         ---components be transparent (e.g. status line background)
         transparent_background_level = 0,
         ---Whether italics should be used for keywords and more.
-        italics = false,
+        italics = true,
         ---Disable italic fonts for comments. Comments are in italics by default, set
         ---this to `true` to make them _not_ italic!
         disable_italic_comments = false,
@@ -33,7 +33,7 @@ return {
         ---Some plugins support highlighting error/warning/info/hint texts, by
         ---default these texts are only underlined, but you can use this option to
         ---also highlight the background of them.
-        diagnostic_text_highlight = false,
+        diagnostic_text_highlight = true,
         ---Which colour the diagnostic text should be. Options are `"grey"` or `"coloured"` (default)
         diagnostic_virtual_text = "coloured",
         ---Some plugins support highlighting error/warning/info/hint lines, but this
@@ -65,7 +65,11 @@ return {
         ---This function will be called once the base and background colours have
         ---been mixed on the palette.
         ---@param palette Palette
-        colours_override = function(palette) end,
+        colours_override = function(palette)
+          -- palette.bg_dim = "#000000"
+          -- palette.bg0 = "#000000"
+          -- palette.bg1 = "#232A2E"
+        end,
       }
     end,
   },

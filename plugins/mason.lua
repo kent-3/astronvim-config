@@ -7,7 +7,24 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "lua_ls",
+        "bashls",
+        "cssls",
+        "docker_compose_language_service",
+        "dockerls",
+        "emmet_ls",
+        "eslint",
+        "html",
+        "jsonls",
+        "lua_ls",
+        "marksman",
+        "powershell_es",
+        "pyright",
+        "rust_analyzer",
+        "svelte",
+        -- "tailwindcss",
+        "taplo",
+        "tsserver",
+        "yamlls",
       })
     end,
   },
@@ -18,8 +35,15 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
-        -- "prettier",
-        -- "stylua",
+        -- formatters
+        "black",
+        "isort",
+        "prettierd",
+        "shfmt",
+        "stylua",
+        -- linters
+        "shellcheck",
+        "hadolint",
       })
     end,
   },

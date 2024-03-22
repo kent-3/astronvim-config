@@ -18,7 +18,10 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "everforest",
+  colorscheme = "kanagawa",
+  -- colorscheme = "everforest",
+  -- colorscheme = "default",
+  -- colorscheme = "habamax",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -69,6 +72,10 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- use GitBash
+    -- vim.cmd [[let &shell = '"C:\Program Files\Git\bin\bash.exe"']]
+    -- vim.cmd [[let &shellcmdflag = '-s']]
+
     -- Set up custom filetypes
     vim.filetype.add {
       -- extension = {
@@ -86,6 +93,7 @@ return {
     if vim.g.neovide then
       vim.o.guifont = "CaskaydiaCove Nerd Font:h12"
       vim.g.neovide_scale_factor = 1.0
+      vim.cmd "colorscheme kanagawa"
 
       -- scale with CTRL-+/-
       local change_scale_factor = function(delta) vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta end
