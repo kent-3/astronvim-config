@@ -1,4 +1,4 @@
-return { -- this table overrides highlights in all themes
+return {
   -- Normal = {  bg = "#000000" },
   CursorLine = { ctermbg = 236, bg = "#303030" },
   NotifyBackground = { link = "Normal" },

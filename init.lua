@@ -92,8 +92,15 @@ return {
     -- only for Neovide
     if vim.g.neovide then
       vim.o.guifont = "CaskaydiaCove Nerd Font:h12"
+      vim.opt.linespace = 0
       vim.g.neovide_scale_factor = 1.0
-      vim.cmd "colorscheme kanagawa"
+      vim.g.neovide_fullscreen = false
+      vim.g.neovide_confirm_quit = true
+      vim.g.neovide_remember_window_size = true
+
+      -- vim.cmd "colorscheme kanagawa"
+
+      vim.keymap.set("n", "<F11>", function() vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen end)
 
       -- scale with CTRL-+/-
       local change_scale_factor = function(delta) vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta end
