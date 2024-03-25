@@ -102,10 +102,10 @@ return {
 
       -- allow CTRL-C copy and CTRL-V paste
       vim.keymap.set("v", "<C-c>", '"+y', { desc = "Copy" }) -- Copy
-      vim.keymap.set("n", "<C-v>", '"+P', { desc = "Paste" }) -- Paste normal mode
+      vim.keymap.set("n", "<C-v>", '"+p', { desc = "Paste" }) -- Paste normal mode
       vim.keymap.set("v", "<C-v>", '"+P', { desc = "Paste" }) -- Paste visual mode
-      vim.keymap.set("c", "<C-v>", "<C-R>+") -- Paste command mode
-      vim.keymap.set("i", "<C-v>", '<ESC>l"+Pli') -- Paste insert mode
+      vim.keymap.set("c", "<C-v>", "<C-r>+") -- Paste command mode
+      vim.keymap.set("i", "<C-v>", "<C-r>+") -- Paste insert mode
       vim.keymap.set("t", "<C-v>", [[<C-\><C-n>"+Pi]]) -- Paste terminal mode
     end
   end,
